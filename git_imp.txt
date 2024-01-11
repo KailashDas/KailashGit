@@ -1,0 +1,400 @@
+or create a new repository on the command line
+echo "# JavaCode" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/KailashDas/JavaCode.git
+git push -u origin main
+=================================================================================================
+====================================================================================================
+================================================================================================
+…or push an existing repository from the command line
+git remote add origin https://github.com/KailashDas/JavaCode.git
+git branch -M main
+git push -u origin main
+
+==================
+#checking the branch
+git branch -a
+
+#create new branch
+git branch newBranchName
+
+# delete branch
+$ git branch -d "springboot"
+
+git push origin -d "branch name" 
+
+git clone - b branchname url
+
+
+
+
+
+
+
+
+
+
+==============================================================================================
+================================================================================================
+=======
+Git Hub
+=======
+
+=> Git Hub is a version control software
+
+=> Git Hub We can use as a repository server to store project source code
+
+
+Q-1) How to integrate project source code at one place ?
+
+Q-2) How to track code changes done by multiple developers in project ?
+
+		(who, when, why and what)
+
+Q-3) How to revert code changes ?
+
+
+=> All the above 3 problems can be solved by using Git Hub
+
+=> Git Hub providing free and commerical plans
+
+=> Git Hub is under licencese of Microsoft...
+
+Note: In order to use Git Hub, we need to create account in Git Hub.
+
+====================
+What is a Repository ?
+====================
+
+=> A place to store project files (source code)
+
+=> 2 types of repositories
+
+		1) Public Repository  (Anybody can see, we choose who can commit)
+
+		2) Private Repository (we choose who can see & commit)
+
+Note: We need to provide permission for team members to commit changes to repository.
+
+=> When we create a Git Repository we will get Repository URL. That Repository URL we will share with Development team.
+
+			Ex: https://github.com/ashokitschool/CNB_Repo.git
+
+==========
+Git Client
+=========
+
+=> Git Client softwares are used to communicate with Git Hub Repository using Repo URL.
+
+=> We have several git client softwares 
+
+			1) Git Bash
+			2) Git GUI
+			3) Source Tree
+			4) Tortoise SVN
+			5) Eclipse etc.....
+
+
+=================
+Git Bash commands
+=================
+
+$ git help : To display list of frequently used git commands
+
+$ git help <cmd-name> : To open documentation of given command
+
+
+# Introduce ourself to git bash using below commands
+
+$ git config --global user.name "ashokit"
+
+$ git config --global user.email "ashokitschool@gmail.com"
+
+
+
+=========================== Generate Git Token =======================
+
+1) Login into Git Hub Account
+2) Goto Profile and Click on Settings
+3) Go to Developer Settings
+4) Click On 'Personal Access Tokens (Classic)'
+5) Click on Generate New Token
+
+Note: Select all checkboxes and click on 'Generate Token'. Copy the token and save it.
+
+
+My Token : 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
+
+===================================================================
+
+
+=============================
+First Commit to Git Hub Repository
+=============================
+
+1) Goto new folder and open Git Bash
+
+2) Execute 'git init' command
+
+3) Create one file using touch command
+
+	$ touch Demo.java
+
+4) Add file to staging area
+
+	$ git add <filename>
+
+5) Commit the  file by giving msg
+	
+	$ git commit -m 'my first commit' 
+
+6) Execute below command to add branch
+
+	$ git branch -m main
+
+7) Execute below command to link working directory with git remote repository
+
+	$ git remote add origin <repo-url>
+
+8) Execute below command to push changes to git remote repository
+
+	$ git push -u origin main
+
+Note: It will ask password then enter token that we have generated.
+
+9) Refresh git repository page and see the file we have committed (It should display)
+
+
+================
+GIT Architecture
+================
+
+1) Working Tree  : The place where we are creating / modifying files
+
+2) Staging Area : It represents the files which are eligible for commit
+
+3) Local Repository : Git will maintain its repository in our local system ( .git )
+
+4) Remote Repository / Central Repository : It contains all the team members work.
+
+
+
+
+$ git init
+
+$ git status
+
+$ git add <filename>
+
+$ git add .
+
+$ git restore <filename> 
+
+$ git commit -m <msg>
+
+$ git push
+
+$ git clone <repo-url>
+
+$ git pull
+
+$ git log
+
+$ git rm
+
+
+Note: Before pushing our changes its always recommended to pull latest changes.
+
+=> When we pull latest changes, there is a chance of getting conflict (if 2 ppl are working on same file and same line)
+
+=> We need to resolve conflict and we need to push latest code to remote repository without conflict.
+
+==========
+git stash
+==========
+
+=> Manager assigned task-101 for me @9:00 AM (IST). I have started working on that... half of the task is completed and modified several java files.
+
+=> Manager called me @12:00 PM and told that Ashok park task-101 for now... first complete task-120 which is very crictical now... after task-120 is completed the push code changes for task-120 then work on task-101.
+
+
+Note: Git stash command is used to save working tree changes to temporary location and make working tree clean.
+
+
+
+============
+Git Branches
+============
+
+=> Git Branches are used to maintain multiple code bases in the repository
+
+=> We can do parallel work using Branches in the repository
+
+=> Multiple Teams can do parallel work using branches.
+
+=> In realtime we will have below branches in repository.
+
+
+1) main / master (default)
+
+2) develop
+
+3) feature
+
+4) qa
+
+5) uat
+
+6) release
+
+
+
+1) Create branches in repository
+
+2) Clone git repository
+
+3) swith branches using 'git checkout <branch-name>'
+
+
+=========================
+What is Branch Merging ?
+========================
+
+=> Merging changes from one branch to another branch is called as Branch Merging.
+
+=> We will use 'Pull Request' to merge changes from one branch to another branch.
+
+
+
+====================== Merging Task =======================
+
+1) Create develop branch from main branch in Git Hub Repo
+
+2) Clone Git Repository using 'git clone'
+
+3) Switch to develop branch using 'git checkout'
+
+4) Create a file then commit and push that file to develop branch
+
+5) Verify that file in github repo (it will present only in develop branch)
+
+6) Create Pull Request and merge develop branch changes into main branch.
+
+=============================================
+What is Branching Strategy in your Project ?
+=============================================
+
+=> We have 'main' branch as default branch in our repository
+
+=> Development team will perform their development activities on 'develop' branch. Once development activity completed they will merge changes from develop branch to main branch.
+
+=> Any bug fixes we will do it on SIT branch and we will merge those changes into main branch.
+
+=> R & D team will work on 'research' branch and they will merge changes into main branch
+
+=> Any Change Request related functionality will be implemented in 'feature' branch and changes will be merged into main branch.
+
+=> When we have production deployment we will keep that code into 'release' branch and we will release to production.
+
+==========================================
+What is Code Freeze and Branch Locking ?
+==========================================
+
+=> Code Freeze means we don't allow anybody to modify the code which is getting released into production.
+
+=> In general 20 or 30 days before production deployment we will do code freeze.
+
+=> Production Deployment code we will keep in 'release' branch and we will lock that branch.
+
+=> Branch Locking means removing write permissions for that branch.
+
+Note: If any developer want to commit the code to release branch then Managers approval is required.
+
+====================
+What is git fetch ?
+====================
+
+=> It will compare our local repository and remote repository files and it will notify if there are any new changes in remote repository but it is not going to pull those changes.
+
+
+=> To pull changes from Remote Repository to local repo we will use 'git pull' command.
+
+=====================================================
+How to revert code changes after git push completed
+=====================================================
+
+=> We can revert git commit in 2 ways
+
+1) Remove the changes that we have made and push it again
+
+2) Using 'git revert' command we can revert the changes
+
+		$ git revert <commit-id>
+
+Note: We can get commit id using 'git log' command
+
+
+=========================
+git merge vs git rebase
+=========================
+
+=> 'git merge' command is used to merge changes from one branch to another branch from git bash
+			
+			$ git merge <branch-name>
+
+Note: git merge command will maintain commit history
+
+=> 'git rebase' command is used to merge changes from one branch to another branch 
+
+Note: git rebase will not preserve commit history
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
